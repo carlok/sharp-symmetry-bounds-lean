@@ -15,6 +15,8 @@ orientation-preserving similarity, as `Re(z^(d-2)(|z|^2 + a)) = 0` with
 - `Challenge.lean`: the statements (Mathlib-only imports, intentional `sorry`).
 - `Solution.lean`: the same statements proved from the library in `lean/`.
 - `comparator.json`, `formalization.yaml`: Palomar entry configuration and metadata.
+- `docs/THEOREM1.md`: informal statement, proof outline mapped step by step to
+  the Lean declarations, and fidelity notes.
 
 This repository is extracted from a larger private development and contains
 only the modules needed for Theorem 1. The proofs use only the axioms

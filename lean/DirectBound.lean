@@ -37,7 +37,7 @@ noncomputable def directRotationEquiv (P : BPoly) (c : ℂ)
     rfl
 
 /-- The rotation upper bound for all direct Euclidean symmetries, with no fixed-center
-or polynomial-transformation assumptions. Sharpness is a separate, unported assertion. -/
+or polynomial-transformation assumptions. Sharpness is proved separately in `Sharpness`. -/
 theorem direct_euclidean_bound {P : BPoly} (hP : Irreducible P)
     (hd : 2 ≤ P.totalDegree) (hinf : (realLocus P).Infinite) (hcircle : NotCircle P) :
     Finite (DirectSymmetries P) ∧

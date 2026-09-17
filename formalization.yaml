@@ -30,7 +30,7 @@ sources:
     type: original-proof
     authors:
       - "Carlo Perassi"
-    location: "Unpublished working note by the author; not included in this repository"
+    location: "docs/THEOREM1.md in this repository (statement and proof outline of Theorem 1 from the unpublished note)"
     relationship: other
     note: >-
       Unpublished working note. The bounds, their sharpness and the equality
@@ -142,6 +142,8 @@ fidelity:
     (5) "Not real" is stated as im(a) != 0. (6) The converse is proved without
     the normalization |a| = 1, a slight strengthening. (7) A symmetry T of C is
     required to satisfy T(z) in C exactly when z in C, i.e. T maps C onto C.
+    (8) The sign character and the reflection statement of Lemma 3 are proof
+    ingredients (GeometricRotation, Reflection), not compared statements.
 
 review:
   status: "self-assessed"
@@ -150,8 +152,11 @@ review:
   notes: >-
     Kernel-checked Lean proofs with a namespace-wide axiom audit (only propext,
     Classical.choice, Quot.sound). Challenge and Solution statements and
-    definitions were compared by an elaborated-term pre-check; Palomar's
-    Comparator has not yet been run. No independent human review.
+    definitions were compared by an elaborated-term pre-check, and Palomar's
+    reusable mechanical preflight (Comparator, NanoDa, profile
+    palomar-standard-v1) passed on commit 4408003 of this repository. The
+    informal account with a step-by-step map to the Lean declarations is
+    docs/THEOREM1.md. No independent human review.
 
 alignment:
   namespace: "SharpSymmetryBounds"
