@@ -1,0 +1,53 @@
+name = "sharp_symmetry_bounds"
+version = "0.1.0"
+defaultTargets = ["CurveSymmetry", "Challenge", "Solution"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "81a5d257c8e410db227a6665ed08f64fea08e997"
+
+# Proof library for Theorem 1 (flat module names kept from the original port).
+[[lean_lib]]
+name = "CurveSymmetry"
+srcDir = "lean"
+moreLeanArgs = ["-DwarningAsError=true"]
+roots = [
+  "Blowup",
+  "CartesianCoordinates",
+  "CartesianDescent",
+  "CartesianReal",
+  "ChangeCenter",
+  "DirectBound",
+  "DirectIsometries",
+  "Elimination",
+  "EqualityForm",
+  "EuclideanCenter",
+  "EuclideanParameters",
+  "ExtremalClassification",
+  "FamilyIrreducibility",
+  "FamilyQuadratic",
+  "FamilyRealLocus",
+  "FamilyRotations",
+  "Fermat",
+  "GeometricRotation",
+  "Irreducibility",
+  "IsometryInterface",
+  "Normalization",
+  "PaperBounds",
+  "RealEquation",
+  "RealLocus",
+  "Reflection",
+  "ReflectionBound",
+  "RotationGroup",
+  "RotationSupport",
+  "Sharpness",
+  "Translation",
+]
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,13 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SharpSymmetryBounds.sharp_bounds",
+    "SharpSymmetryBounds.rotation_bound_sharp",
+    "SharpSymmetryBounds.full_bound_sharp",
+    "SharpSymmetryBounds.equality_classification",
+    "SharpSymmetryBounds.family_attains_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

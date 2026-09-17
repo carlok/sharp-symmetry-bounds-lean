@@ -1,0 +1,20 @@
+name: Palomar preflight
+
+# Runs Palomar's own mechanical verifier (reusable workflow, pinned commit) as an
+# advisory preflight. This is not a Palomar submission.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  palomar-preflight:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@ec6064aea91e2f99187f3f46a2652e4d977ce755
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: ec6064aea91e2f99187f3f46a2652e4d977ce755
+      request_id: t1preflight1
+      mode: full
+      options: '{"comparator_config_path":"comparator.json","authorization_relationship":"I am a responsible author or maintainer"}'
