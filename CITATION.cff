@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you refer to this formalization, please cite the Palomar registry record."
+title: "Sharp symmetry bounds for real plane algebraic curves (Theorem 1) in Lean 4"
+abstract: >-
+  Lean 4 / Mathlib formalization of Theorem 1 on Euclidean symmetry groups of
+  real plane algebraic curves: finiteness, a cyclic direct part of order at most
+  max(d, 2d - 4), a full group of order at most 2d, sharpness in every degree,
+  and the classification of the extremal curves for d >= 5.
+type: software
+authors:
+  - given-names: Carlo
+    family-names: Perassi
+repository-code: "https://github.com/carlok/sharp-symmetry-bounds-lean"
+url: "https://palomar-registry.org/entry?id=PALOMAR-2026-09-18-000007&version=1"
+license: Apache-2.0
+date-released: "2026-09-18"
+version: "1"
+identifiers:
+  - type: other
+    value: "PALOMAR-2026-09-18-000007"
+    description: "Palomar registry record, version 1"
+keywords:
+  - Lean 4
+  - Mathlib
+  - formalized mathematics
+  - real algebraic geometry
+  - plane algebraic curves
+  - Euclidean symmetry

@@ -1,5 +1,10 @@
 # Sharp symmetry bounds for real plane algebraic curves (Theorem 1) in Lean 4
 
+[![Lean build](https://github.com/carlok/sharp-symmetry-bounds-lean/actions/workflows/build.yml/badge.svg)](https://github.com/carlok/sharp-symmetry-bounds-lean/actions/workflows/build.yml)
+[![Palomar record](https://img.shields.io/badge/Palomar-PALOMAR--2026--09--18--000007-0b7285)](https://palomar-registry.org/entry?id=PALOMAR-2026-09-18-000007&version=1)
+[![Lean 4.32.0](https://img.shields.io/badge/Lean-4.32.0-blue)](lean-toolchain)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-lightgrey)](LICENSE)
+
 Lean 4 / Mathlib formalization of Theorem 1 of the working note
 "Sharp symmetry bounds for real algebraic curves" by Carlo Perassi.
 
