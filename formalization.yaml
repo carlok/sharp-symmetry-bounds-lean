@@ -27,15 +27,17 @@ classification:
 
 sources:
   - title: "Sharp symmetry bounds for real algebraic curves (working draft, 2026), Theorem 1"
-    type: original-proof
+    type: "unpublished working note"
     authors:
       - "Carlo Perassi"
-    location: "docs/THEOREM1.md in this repository (statement and proof outline of Theorem 1 from the unpublished note)"
-    relationship: other
+    location: "docs/THEOREM1.md in this repository reproduces the statement and proof outline of Theorem 1 of the note"
+    relationship: formalizes
     note: >-
-      Unpublished working note. The bounds, their sharpness and the equality
-      classification are presented there; no independent expert review has
-      taken place and novelty has not been certified.
+      Chronology: the author wrote the working note first, and this entry
+      formalizes its Theorem 1 in Lean; the formalization is not the first
+      presentation of the result. The note itself is unpublished and is not
+      included in this repository. No independent expert review has taken place
+      and no novelty is claimed.
     author_endorsement: participated
   - title: "Rotations, translations and symmetry detection for complexified curves"
     type: article

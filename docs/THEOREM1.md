@@ -3,7 +3,9 @@
 This document is the informal account for reviewers. It restates Theorem 1 of
 the working note "Sharp symmetry bounds for real algebraic curves" by Carlo
 Perassi (unpublished; only Theorem 1 is formalized here), outlines its proof,
-and maps every step to the Lean development in `lean/`.
+and maps every step to the Lean development in `lean/`. The note was written
+before the formalization: this repository formalizes its Theorem 1 and is not
+the first presentation of the result.
 
 ## Setting
 
