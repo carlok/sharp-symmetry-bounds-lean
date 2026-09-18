@@ -18,6 +18,24 @@ orientation-preserving similarity, as `Re(z^(d-2)(|z|^2 + a)) = 0` with
 - `docs/THEOREM1.md`: informal statement, proof outline mapped step by step to
   the Lean declarations, and fidelity notes.
 
+## Palomar registry
+
+Registered on 2026-09-18 as
+[`PALOMAR-2026-09-18-000007`](https://palomar-registry.org/entry?id=PALOMAR-2026-09-18-000007&version=1),
+at commit `ced9fe2d4d2aa42aa03bbc19b1b56cdcd18c9413`. The registry rebuilt the
+project in a sandbox from the pinned dependencies, exported the proof terms and
+replayed them with an independent kernel, and checked with the Comparator that
+`Solution.lean` proves the `Challenge.lean` statements using only the permitted
+axioms. The record, its machine-readable evidence and immutable copies of the
+source are public:
+
+- record JSON: <https://data.palomar-registry.org/entries/PALOMAR-2026-09-18-000007-v1.json>
+- source preservation: `PalomarArchive/carlok--sharp-symmetry-bounds-lean--f3036be09495`,
+  tag `palomar/PALOMAR-2026-09-18-000007-v1/ced9fe2d4d2aa42aa03bbc19b1b56cdcd18c9413`
+
+The editorial review behind the record was automated and raised no problems.
+Registration certifies that the Lean proofs check, not that the result is new.
+
 This repository is extracted from a larger private development and contains
 only the modules needed for Theorem 1. The proofs use only the axioms
 `propext`, `Classical.choice` and `Quot.sound`. The Lean code was written by AI
