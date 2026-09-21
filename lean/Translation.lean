@@ -102,7 +102,7 @@ theorem no_translation_symmetry {P : BPoly} (hP : Irreducible P)
     change (lineRestriction z v P).eval (n : ℂ) = 0
     rw [eval_lineRestriction]
     have h := horbit n
-    simpa only [realLocus, Set.mem_setOf_eq, star_add, star_mul, star_natCast, mul_comm] using h
+    simpa only [realLocus, Set.mem_ofPred_eq, star_add, star_mul, star_natCast, mul_comm] using h
   have hsub : realLocus (lineEquation z v) ⊆ realLocus P := by
     intro w hw
     change eval _ (lineEquation z v) = 0 at hw

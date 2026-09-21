@@ -10,8 +10,8 @@ lemma centered_extremal_generator {m : ℕ} (hm : 3 ≤ m) {P : BPoly}
     (hcircle : ¬ ∃ R : ℝ, 0 < R ∧ realLocus P = Metric.sphere (0 : ℂ) R)
     (hcard : Nat.card (centeredRotationGroup P) = 2 * m) :
     ∃ ζ : ℂ, IsPrimitiveRoot ζ (2 * m) ∧ rotate ζ P = -P := by
-  letI := centeredRotationGroup_finite hP hinf hcircle
-  letI := isCyclic_of_injective_ringHom (rotationValue P) (rotationValue_injective P)
+  let := centeredRotationGroup_finite hP hinf hcircle
+  let := isCyclic_of_injective_ringHom (rotationValue P) (rotationValue_injective P)
   obtain ⟨u, hu⟩ := IsCyclic.exists_ofOrder_eq_natCard (α := centeredRotationGroup P)
   have hroot : IsPrimitiveRoot (rotationValue P u) (2 * m) := by
     rw [← hcard, ← hu]

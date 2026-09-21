@@ -6,7 +6,7 @@ defaultTargets = ["CurveSymmetry", "Challenge", "Solution"]
 name = "mathlib"
 scope = "leanprover-community"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "81a5d257c8e410db227a6665ed08f64fea08e997"
+rev = "5ed2965256430c3649e86755f9576b54eca72435"
 
 # Proof library for Theorem 1 (flat module names kept from the original port).
 [[lean_lib]]

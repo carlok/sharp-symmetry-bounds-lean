@@ -44,8 +44,8 @@ lemma elimination_identity {P Q : NPoly} (hP : Irreducible P)
     (hdegree : P.natDegree ≠ 0) (hnot : ¬ P ∣ Q) :
     ∃ A B : NPoly, ∃ r : UPoly, r ≠ 0 ∧ A * P + B * Q = Polynomial.C r := by
   classical
-  letI : IsPrincipalIdealRing (Polynomial CoeffField) :=
-    EuclideanDomain.to_principal_ideal_domain (R := Polynomial CoeffField)
+  have : IsPrincipalIdealRing (Polynomial CoeffField) :=
+    EuclideanDomain.instIsPrincipalIdealRing (R := Polynomial CoeffField)
   let f : UPoly →+* CoeffField := algebraMap UPoly CoeffField
   have hprim := hP.isPrimitive hdegree
   have hirr : Irreducible (P.map f) :=
@@ -83,7 +83,7 @@ lemma nested_degree_ne_zero {P : BPoly} (hP : P ≠ 0)
     have hz : toNested P = 0 := by simpa [r, hr] using hC
     exact hP (toNested.injective (by simpa using hz))
   apply infinite_conjugate_image hinf
-  apply (Polynomial.finite_setOf_isRoot hr).subset
+  apply (Polynomial.finite_setOfPred_isRoot hr).subset
   rintro _ ⟨z, hz, rfl⟩
   have he := nestedEval_toNested P z (star z)
   rw [hC] at he
@@ -105,7 +105,7 @@ theorem dvd_of_realLocus_subset {P Q : BPoly} (hP : Irreducible P)
   obtain ⟨A, B, r, hr, hidentity⟩ := elimination_identity hirr
     (nested_degree_ne_zero hP.ne_zero hinf) hndvd
   apply infinite_conjugate_image hinf
-  apply (Polynomial.finite_setOf_isRoot hr).subset
+  apply (Polynomial.finite_setOfPred_isRoot hr).subset
   rintro _ ⟨z, hz, rfl⟩
   have hp : nestedEval z (star z) (toNested P) = 0 :=
     (nestedEval_toNested P z (star z)).trans hz

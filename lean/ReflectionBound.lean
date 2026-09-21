@@ -51,8 +51,8 @@ theorem centered_rotation_bound_with_reflection {P : BPoly} (hP : Irreducible P)
     (hcircle : ¬ ∃ R : ℝ, 0 < R ∧ realLocus P = Metric.sphere (0 : ℂ) R)
     {a : ℂ} (ha : OppositeSymmetry (realLocus P) a 0) :
     Nat.card (centeredRotationGroup P) ≤ P.totalDegree := by
-  letI := centeredRotationGroup_finite hP hinf hcircle
-  letI := isCyclic_of_injective_ringHom (rotationValue P) (rotationValue_injective P)
+  let := centeredRotationGroup_finite hP hinf hcircle
+  let := isCyclic_of_injective_ringHom (rotationValue P) (rotationValue_injective P)
   obtain ⟨u, hu⟩ := IsCyclic.exists_ofOrder_eq_natCard (α := centeredRotationGroup P)
   have hroot : IsPrimitiveRoot (rotationValue P u) (Nat.card (centeredRotationGroup P)) := by
     rw [← hu]
@@ -88,7 +88,7 @@ theorem direct_bound_with_opposite {P : BPoly} (hP : Irreducible P)
   have hi := realLocus_shift_infinite c hinf
   have hn := shifted_not_circle c hcircle
   rw [Nat.card_congr (directRotationEquiv P c hc)]
-  letI := centeredRotationGroup_finite hirr hi hn
+  let := centeredRotationGroup_finite hirr hi hn
   by_cases hex : ∃ u : centeredRotationGroup (shift c P), (u.val : ℂ) ≠ 1
   · obtain ⟨u, hu⟩ := hex
     have hrot : DirectSymmetry (realLocus (shift c P)) (u.val : ℂ) 0 :=
@@ -102,7 +102,7 @@ theorem direct_bound_with_opposite {P : BPoly} (hP : Irreducible P)
       have hu : (u.val : ℂ) = 1 := by by_contra h; exact hex ⟨u, h⟩
       have hv : (v.val : ℂ) = 1 := by by_contra h; exact hex ⟨v, h⟩
       exact hu.trans hv.symm
-    letI := hsub
+    let := hsub
     have he : Nat.card (centeredRotationGroup (shift c P)) = 1 := Nat.card_unique
     omega
 
@@ -113,17 +113,17 @@ theorem full_euclidean_bound {P : BPoly} (hP : Irreducible P)
     Finite (EuclideanSymmetries P) ∧ Nat.card (EuclideanSymmetries P) ≤ 2 * P.totalDegree := by
   classical
   obtain ⟨hf, hb⟩ := direct_euclidean_bound hP hd hinf hcircle
-  letI := hf
+  let := hf
   by_cases hex : Nonempty (OppositeSymmetries P)
   · let g := Classical.choice hex
-    letI : Finite (OppositeSymmetries P) := Finite.of_injective
+    let : Finite (OppositeSymmetries P) := Finite.of_injective
       (oppositeDirectEquiv P g) (oppositeDirectEquiv P g).injective
     refine ⟨inferInstance, ?_⟩
     change Nat.card (DirectSymmetries P ⊕ OppositeSymmetries P) ≤ _
     rw [Nat.card_sum, Nat.card_congr (oppositeDirectEquiv P g)]
     have h := direct_bound_with_opposite hP hd hinf hcircle g
     omega
-  · letI : IsEmpty (OppositeSymmetries P) := not_nonempty_iff.mp hex
+  · let : IsEmpty (OppositeSymmetries P) := not_nonempty_iff.mp hex
     refine ⟨inferInstance, ?_⟩
     change Nat.card (DirectSymmetries P ⊕ OppositeSymmetries P) ≤ _
     rw [Nat.card_sum, Nat.card_of_isEmpty (α := OppositeSymmetries P)]

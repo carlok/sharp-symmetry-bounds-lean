@@ -23,16 +23,16 @@ theorem fermatNested_irreducible {d : ℕ} (hd : 0 < d) : Irreducible (fermatNes
     rw [Ideal.mem_span_singleton]
     by_cases h0 : n = 0
     · subst n
-      simp only [fermatNested, coeff_add, coeff_X_pow, hd.ne, if_false, coeff_C_zero, zero_add]
+      simp only [fermatNested, coeff_add, coeff_X_pow, hd.ne, ite_false, coeff_C_zero, zero_add]
       apply dvd_iff_isRoot.mpr
       simp [IsRoot, hη]
-    · simp only [fermatNested, coeff_add, coeff_X_pow, if_neg (Nat.ne_of_lt hnd'),
-        coeff_C, if_neg h0, add_zero, dvd_zero]
+    · simp only [fermatNested, coeff_add, coeff_X_pow, ite_eq_right (Nat.ne_of_lt hnd'),
+        coeff_C, ite_eq_right h0, add_zero, dvd_zero]
   · exact natDegree_pos_iff_degree_pos.mp (by omega)
   · rw [Ideal.span_singleton_pow, Ideal.mem_span_singleton]
     intro hs
     have hc : (fermatNested d).coeff 0 = X ^ d - C 2 := by
-      simp only [fermatNested, coeff_add, coeff_X_pow, if_neg hd.ne, coeff_C_zero, zero_add]
+      simp only [fermatNested, coeff_add, coeff_X_pow, ite_eq_right hd.ne, coeff_C_zero, zero_add]
     rw [hc] at hs
     have ht := pow_sub_one_dvd_derivative_of_pow_dvd hs
     simp only [show 2 - 1 = 1 by decide, pow_one] at ht

@@ -27,7 +27,7 @@ lemma coeff_blowup (P : BPoly) (a b : ℕ) :
         simp only [exponent_eq_iff, exponent_zero, exponent_one]
         omega
       simp [coeff_monomial, he]
-  | add P Q hP hQ => simp only [map_add, coeff_add, hP, hQ]
+  | add P Q hP hQ => simp only [map_add, AddMonoidAlgebra.coeff_add, Finsupp.add_apply, hP, hQ]
 
 lemma blowup_injective : Function.Injective blowup := by
   intro P Q he

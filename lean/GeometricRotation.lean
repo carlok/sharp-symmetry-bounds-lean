@@ -23,7 +23,7 @@ lemma conjugateSwap_ne_zero {P : BPoly} (hP : P ≠ 0) : conjugateSwap P ≠ 0 :
   have he : s = exponent (s 0) (s 1) := exponent_eq_iff.mpr ⟨rfl, rfl⟩
   intro hzero
   have h := coeff_conjugateSwap P (s 0) (s 1)
-  rw [hzero, coeff_zero] at h
+  rw [hzero, AddMonoidAlgebra.coeff_zero, Finsupp.zero_apply] at h
   apply hs
   rw [he]
   exact star_eq_zero.mp h.symm
@@ -68,7 +68,7 @@ lemma rotate_ne_zero {ζ : ℂ} (hζ : ζ ≠ 0) {P : BPoly} (hP : P ≠ 0) : ro
   obtain ⟨s, hs⟩ := exists_coeff_ne_zero hP
   intro hzero
   have he := coeff_rotate ζ P s
-  rw [hzero, coeff_zero] at he
+  rw [hzero, AddMonoidAlgebra.coeff_zero, Finsupp.zero_apply] at he
   exact (mul_ne_zero hs (mul_ne_zero (pow_ne_zero _ hζ)
     (pow_ne_zero _ (inv_ne_zero hζ)))) he.symm
 

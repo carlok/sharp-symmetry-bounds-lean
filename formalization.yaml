@@ -112,7 +112,7 @@ automation:
   tool_setup: >-
     AI coding agents wrote and repaired the Lean proofs, statements and
     documentation under the author's direction, compiling against pinned Lean
-    4.32.0 and Mathlib with warnings as errors and an axiom audit of the whole
+    4.34.0 and Mathlib with warnings as errors and an axiom audit of the whole
     library namespace.
   cost:
     wall_time: "several weeks of intermittent sessions"

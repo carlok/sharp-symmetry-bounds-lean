@@ -48,6 +48,7 @@ lemma twoParameter_ratio_nonreal {m : ℕ} (hm : 2 ≤ m) {a b : ℂ}
     have he1 := congrArg (C : ℂ →+* BPoly) hbar
     rw [map_mul] at he0 he1
     dsimp [twoParameter]
+    simp only [Complex.star_def] at he1 ⊢
     linear_combination -(X 0 : BPoly) ^ m * he0 - (X 1 : BPoly) ^ m * he1
   have hfirst : ¬ IsUnit ((X 0 : BPoly) * X 1 + C (a / b)) := by
     simpa using radial_factor_not_isUnit (-(a / b))

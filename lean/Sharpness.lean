@@ -52,8 +52,8 @@ theorem fermat_direct_card {d : ℕ} (hd : 2 ≤ d) :
   have hinf := fermat_realLocus_infinite hd'
   have hdeg : 2 ≤ (fermatPolynomial d).totalDegree := by rwa [fermat_degree hd']
   have hnc := fermat_not_circle hd'
-  letI := (direct_euclidean_bound hirr hdeg hinf hnc).1
-  letI : NeZero d := ⟨hd'.ne'⟩
+  let := (direct_euclidean_bound hirr hdeg hinf hnc).1
+  let : NeZero d := ⟨hd'.ne'⟩
   let f : rootsOfUnity d ℂ → DirectSymmetries (fermatPolynomial d) := fun u =>
     ⟨((u.val : ℂ), 0), fermat_root_symmetry hd' ((mem_rootsOfUnity' _ _).mp u.prop)⟩
   have hi : Function.Injective f := by
@@ -69,10 +69,10 @@ theorem fermat_direct_card {d : ℕ} (hd : 2 ≤ d) :
 theorem fermat_full_card {d : ℕ} (hd : 2 ≤ d) :
     Nat.card (EuclideanSymmetries (fermatPolynomial d)) = 2 * d := by
   have hd' : 0 < d := by omega
-  letI := (direct_euclidean_bound (fermat_irreducible hd')
+  let := (direct_euclidean_bound (fermat_irreducible hd')
     (by rw [fermat_degree hd']; exact hd) (fermat_realLocus_infinite hd') (fermat_not_circle hd')).1
   let g : OppositeSymmetries (fermatPolynomial d) := ⟨(1, 0), fermat_conjugation d⟩
-  letI : Finite (OppositeSymmetries (fermatPolynomial d)) := Finite.of_injective
+  let : Finite (OppositeSymmetries (fermatPolynomial d)) := Finite.of_injective
     (oppositeDirectEquiv _ g) (oppositeDirectEquiv _ g).injective
   change Nat.card (DirectSymmetries (fermatPolynomial d) ⊕ OppositeSymmetries (fermatPolynomial d)) = _
   rw [Nat.card_sum, Nat.card_congr (oppositeDirectEquiv _ g), fermat_direct_card hd]

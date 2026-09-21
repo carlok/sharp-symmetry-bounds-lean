@@ -97,8 +97,8 @@ theorem direct_isometry_group_bound {P : BPoly} (hP : Irreducible P)
     Finite (directIsometryGroup (realLocus P)) ∧ IsCyclic (directIsometryGroup (realLocus P)) ∧
       Nat.card (directIsometryGroup (realLocus P)) ≤ max P.totalDegree (2 * P.totalDegree - 4) := by
   obtain ⟨hf, hb⟩ := direct_euclidean_bound hP hd hinf hnc
-  letI := hf
-  letI := Finite.of_equiv _ (directIsometryEquiv P)
+  let := hf
+  let := Finite.of_equiv _ (directIsometryEquiv P)
   refine ⟨inferInstance, isCyclic_of_injective_ringHom _ (directSlope_injective hP hd hinf), ?_⟩
   rwa [← Nat.card_congr (directIsometryEquiv P)]
 

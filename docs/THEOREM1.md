@@ -137,7 +137,7 @@ Internally the curve is handled through its complexification
     lake exe cache get
     lake build
 
-Lean 4.32.0 and Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`, pinned in
+Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435` (tag `v4.34.0`), pinned in
 `lake-manifest.json`. The proofs use only `propext`, `Classical.choice` and
 `Quot.sound`; there is no `sorry` outside the intentional holes of
 `Challenge.lean`. Palomar's reusable mechanical preflight

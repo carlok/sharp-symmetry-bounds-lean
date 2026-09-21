@@ -76,8 +76,8 @@ theorem family_direct_card {m : ℕ} (hm : 2 ≤ m) {α : ℂ} (ha : α ≠ star
   have hm' : 0 < m := by omega
   obtain ⟨hf, hb⟩ := direct_euclidean_bound (familyPolynomial_irreducible hm' ha)
     (by rw [family_degree hm']; omega) (family_realLocus_infinite hm' ha) (family_not_circle hm' ha)
-  letI := hf
-  letI : NeZero (2 * m) := ⟨by omega⟩
+  let := hf
+  let : NeZero (2 * m) := ⟨by omega⟩
   let f : rootsOfUnity (2 * m) ℂ → DirectSymmetries (familyPolynomial m α) := fun u =>
     ⟨((u.val : ℂ), 0), family_root_symmetry hm' ((mem_rootsOfUnity' _ _).mp u.prop) α⟩
   have hi : Function.Injective f := by

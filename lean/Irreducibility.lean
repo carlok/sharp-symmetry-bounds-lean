@@ -81,7 +81,7 @@ lemma anti_two_normal_form {m : ℕ} (hm : 2 ≤ m) {ζ : ℂ}
     by_cases hs : s ∈ P.support
     · rcases hsupp s hs with rfl | rfl <;> simp [coeff_monomial, hne, Ne.symm hne]
     · have hc : P.coeff s = 0 := notMem_support_iff.mp hs
-      simp only [coeff_add, coeff_monomial]
+      simp only [AddMonoidAlgebra.coeff_add, Finsupp.add_apply, coeff_monomial]
       split_ifs <;> simp_all
   simpa [monomial_exponent] using hform
 

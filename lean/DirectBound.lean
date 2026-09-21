@@ -47,7 +47,7 @@ theorem direct_euclidean_bound {P : BPoly} (hP : Irreducible P)
   have hdegree : 2 ≤ (shift c P).totalDegree := by simpa [shift_degree] using hd
   obtain ⟨hf, _, hb⟩ := centered_rotation_group_bound hirr hdegree
     (realLocus_shift_infinite c hinf) (shifted_not_circle c hcircle)
-  letI := hf
+  let := hf
   have hfinite : Finite (DirectSymmetries P) :=
     Finite.of_injective (directRotationEquiv P c hc) (directRotationEquiv P c hc).injective
   refine ⟨hfinite, ?_⟩

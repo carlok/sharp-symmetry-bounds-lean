@@ -43,6 +43,7 @@ theorem family_point_of_norm {m : ℕ} (hm : 0 < m) {α : ℂ} (ha : α ≠ star
     dsimp [q]
     have he := mul_star_norm_sq b
     field_simp
+    simp only [Complex.star_def] at he ⊢
     linear_combination he
   refine ⟨(r : ℂ) * v, ?_, by simp [hvn, abs_of_nonneg hr]⟩
   change eval _ (familyPolynomial m α) = 0

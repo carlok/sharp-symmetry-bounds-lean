@@ -86,7 +86,7 @@ theorem centeredRotationGroup_finite {P : BPoly} (hP : Irreducible P)
   have hroots : ∀ u : centeredRotationGroup P, q.IsRoot (rotationValue P u) := by
     intro u
     simpa [q, Polynomial.IsRoot] using sub_eq_zero.mpr (rotation_value_root hP hinf hc u)
-  letI : Fintype {z : ℂ // q.IsRoot z} := (Polynomial.finite_setOf_isRoot hq).fintype
+  let : Fintype {z : ℂ // q.IsRoot z} := (Polynomial.finite_setOfPred_isRoot hq).fintype
   exact Finite.of_injective (fun u => (⟨rotationValue P u, hroots u⟩ : {z : ℂ // q.IsRoot z}))
     (fun _ _ h => rotationValue_injective P (congrArg Subtype.val h))
 
@@ -96,8 +96,8 @@ theorem centered_rotation_group_bound {P : BPoly} (hP : Irreducible P)
     (hcircle : ¬ ∃ R : ℝ, 0 < R ∧ realLocus P = Metric.sphere (0 : ℂ) R) :
     Finite (centeredRotationGroup P) ∧ IsCyclic (centeredRotationGroup P) ∧
       Nat.card (centeredRotationGroup P) ≤ max P.totalDegree (2 * P.totalDegree - 4) := by
-  letI := centeredRotationGroup_finite hP hinf hcircle
-  letI := isCyclic_of_injective_ringHom (rotationValue P) (rotationValue_injective P)
+  let := centeredRotationGroup_finite hP hinf hcircle
+  let := isCyclic_of_injective_ringHom (rotationValue P) (rotationValue_injective P)
   refine ⟨inferInstance, inferInstance, ?_⟩
   obtain ⟨u, hu⟩ := IsCyclic.exists_ofOrder_eq_natCard (α := centeredRotationGroup P)
   have hroot : IsPrimitiveRoot (rotationValue P u) (Nat.card (centeredRotationGroup P)) := by

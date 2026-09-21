@@ -22,7 +22,7 @@ lemma realCoefficients_map {P : BPoly} (hP : map (starRingEnd ℂ) P = P) :
     map Complex.ofRealHom (realCoefficients P) = P := by
   apply (map_mapRange_eq_iff Complex.ofRealHom Complex.re (by simp) P).mpr
   intro s
-  have h := congrArg (coeff s) hP
+  have h := congrArg (fun p : BPoly => p.coeff s) hP
   rw [coeff_map] at h
   exact Complex.conj_eq_iff_re.mp h
 

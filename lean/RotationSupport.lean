@@ -1,4 +1,4 @@
-import Mathlib.Data.Complex.Basic
+import Mathlib.Basic.Complex.Basic
 import Mathlib.RingTheory.MvPolynomial.Homogeneous
 import Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots
 import Mathlib.Tactic
@@ -39,7 +39,7 @@ lemma rotate_monomial (ζ : ℂ) (s : Exponent) (c : ℂ) :
   simp only [Fin.isValue, ↓reduceIte, show (1 : Fin 2) ≠ 0 by decide, mul_pow,
     ← map_pow C, X_pow_eq_monomial]
   rw [show s = Finsupp.single 0 (s 0) + Finsupp.single 1 (s 1) from exponent_decompose s]
-  simp only [C_mul_monomial, monomial_mul, mul_one]
+  simp only [C_mul_monomial, monomial_mul_monomial, mul_one]
   simp
 
 lemma coeff_rotate (ζ : ℂ) (P : BPoly) (s : Exponent) :
@@ -163,12 +163,12 @@ theorem anti_four_normal_form {m : ℕ} (hm : 3 ≤ m) {ζ : ℂ}
       simp [coeff_monomial, h01, h02, h03, h12, h13, h23,
         Ne.symm h01, Ne.symm h02, Ne.symm h03, Ne.symm h12, Ne.symm h13, Ne.symm h23]
   · have hc : P.coeff s = 0 := notMem_support_iff.mp hs
-    simp only [coeff_add, coeff_monomial]
+    simp only [AddMonoidAlgebra.coeff_add, Finsupp.coe_add, Pi.add_apply, coeff_monomial]
     split_ifs <;> simp_all
 
 lemma monomial_exponent (a b : ℕ) (c : ℂ) :
     monomial (exponent a b) c = C c * (X 0 : BPoly) ^ a * X 1 ^ b := by
-  simp [X_pow_eq_monomial, C_mul_monomial, monomial_mul, exponent]
+  simp [X_pow_eq_monomial, C_mul_monomial, monomial_mul_monomial, exponent]
 
 /-- Conjugate-symmetric coefficients give the two-parameter form used in the paper. -/
 theorem anti_real_normal_form {m : ℕ} (hm : 3 ≤ m) {ζ : ℂ}

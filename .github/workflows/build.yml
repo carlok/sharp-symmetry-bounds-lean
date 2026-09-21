@@ -25,5 +25,7 @@ jobs:
           lint: 'false'
           use-mathlib-cache: 'true'
           use-github-cache: 'false'
+      - name: Axiom audit of the headline theorems
+        run: python3 scripts/check_axioms.py
       - name: Ensure the build retained the committed dependency lock
         run: git diff --exit-code -- lean-toolchain lakefile.toml lake-manifest.json

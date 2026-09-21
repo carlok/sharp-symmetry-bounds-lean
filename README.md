@@ -2,7 +2,7 @@
 
 [![Lean build](https://github.com/carlok/sharp-symmetry-bounds-lean/actions/workflows/build.yml/badge.svg)](https://github.com/carlok/sharp-symmetry-bounds-lean/actions/workflows/build.yml)
 [![Palomar record](https://img.shields.io/badge/Palomar-PALOMAR--2026--09--18--000007-0b7285)](https://palomar-registry.org/entry?id=PALOMAR-2026-09-18-000007&version=1)
-[![Lean 4.32.0](https://img.shields.io/badge/Lean-4.32.0-blue)](lean-toolchain)
+[![Lean 4.34.0](https://img.shields.io/badge/Lean-4.34.0-blue)](lean-toolchain)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-lightgrey)](LICENSE)
 
 Lean 4 / Mathlib formalization of Theorem 1 of the working note
@@ -47,5 +47,5 @@ only the modules needed for Theorem 1. The proofs use only the axioms
 coding agents under the author's direction (see `formalization.yaml`); no
 independent human review of the formalization has taken place.
 
-Build: `lake exe cache get && lake build`. Lean 4.32.0, Mathlib pinned in
+Build: `lake exe cache get && lake build`. Lean 4.34.0, Mathlib pinned in
 `lake-manifest.json`. License: Apache-2.0.

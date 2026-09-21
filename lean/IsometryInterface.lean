@@ -121,7 +121,7 @@ theorem isometry_group_bound {P : BPoly} (hP : Irreducible P)
     (hd : 2 ≤ P.totalDegree) (hinf : (realLocus P).Infinite) (hcircle : NotCircle P) :
     Finite (isometrySymmetryGroup P) ∧ Nat.card (isometrySymmetryGroup P) ≤ 2 * P.totalDegree := by
   obtain ⟨hf, hb⟩ := full_euclidean_bound hP hd hinf hcircle
-  letI := hf
+  let := hf
   refine ⟨Finite.of_equiv _ (euclideanIsometryEquiv P), ?_⟩
   rwa [← Nat.card_congr (euclideanIsometryEquiv P)]
 
