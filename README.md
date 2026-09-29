@@ -17,11 +17,19 @@ For `d >= 5` the curves attaining the rotation bound are classified, up to
 orientation-preserving similarity, as `Re(z^(d-2)(|z|^2 + a)) = 0` with
 `|a| = 1` and `a` not real.
 
+<p align="center"><img src="figures/quintic-real.png" width="360" alt="The quintic Re(z^3(|z|^2 + i)) = 0"></p>
+
+The case `d = 5`, `a = i`: the quintic `Re(z^3(|z|^2 + i)) = 0` has six
+rotations, the maximum `2d - 4`. `uv run figures/quintic.py` draws it, and a
+view of its complex points in `figures/quintic-complex.png`.
+
 - `Challenge.lean`: the statements (Mathlib-only imports, intentional `sorry`).
 - `Solution.lean`: the same statements proved from the library in `lean/`.
 - `comparator.json`, `formalization.yaml`: Palomar entry configuration and metadata.
 - `docs/THEOREM1.md`: informal statement, proof outline mapped step by step to
   the Lean declarations, and fidelity notes.
+- `figures/quintic.py`: draws the figure above (numpy and matplotlib, versions
+  pinned in the script).
 
 ## Palomar registry
 
